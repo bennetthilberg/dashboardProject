@@ -138,6 +138,7 @@ body{
 }
 .navbuttons>button:hover{
     background: #24b2f4;
+    cursor: pointer;
  }
 .sidebar{
     display: grid;
@@ -160,6 +161,7 @@ body{
 }
 .sidebar>div:hover:not(.emptydiv):not(#dashboarddiv){
     background-color: #1f6b94;
+    cursor: pointer;
 }
 #dashboarddiv{
     font-size: 28px;
@@ -172,11 +174,12 @@ body{
 }
 .main{
     display: grid;
-    grid-template-columns: 1fr 275px;
+    grid-template-columns: 1fr 285px;
     grid-template-rows: 1fr 1fr;
     z-index: 11;
     padding-left: 10px;
     padding-top: 18px;
+    padding-bottom: 10px;
 }
 .main>*>p{
     font-weight: 600;
@@ -210,8 +213,8 @@ body{
     background-color: white;
     margin: 0;
     display: grid;
-    grid-template-columns: 9px 1fr 70px;
-    grid-template-rows: 8px 25px 1fr 30px;
+    grid-template-columns: 9px 1fr 128px;
+    grid-template-rows: 20px 32px 1fr 45px;
     border-radius: 9px;
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
@@ -234,10 +237,17 @@ body{
 .title{
     grid-column: 2/-1;
     grid-row: 2/3;
+    font-weight: 700;
+    font-size: 20px;
+    
 }
 .desc{
     grid-column: 2/-1;
     grid-row: 3/4;
+}
+.title, .desc{
+    margin-left: 8px;
+    margin-right: 4px;
 }
 .iconspacer{
     grid-column: 2/3;
@@ -246,6 +256,101 @@ body{
 .icons{
     grid-column: -2/-1;
     grid-row: -2/-1;
-    background-color: orange;
-    opacity: 0.6;
+    /*background-color: orange;
+    opacity: 0.6;*/
+    display: flex;
+    gap: 16px;
+}
+.icons>*{
+    flex: 0 0 auto;
+    opacity: 0.8;
+}
+.projicon:hover{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(50%) contrast(103%);
+    cursor: pointer;
+}
+.announce, .trending{
+    padding-left: 14px;
+    padding-right: 10px;
+}
+.announce{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 16px 1fr;
+    row-gap: 18px;
+}
+#announceTitle{
+    margin: 0;
+    grid-row: 1;
+    font-size: 18px;
+}
+.ancBody{
+    background-color: white;
+    grid-row: 2;
+    border-radius: 8px;
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+    box-shadow: 1px 2px 18px 0px rgba(0,0,0,0.3);
+}
+.ancDesc{
+    margin: 14px;
+    margin-top: 5px;
+}
+.ancTitle{
+    margin: 14px;
+    margin-bottom: 5px;
+}
+.ancTitle{
+    font-weight: 600;
+}
+.trending{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 18px 1fr;
+    row-gap: 24px;
+}
+.trendBody{
+    background-color: white;
+    border-radius: 8px;
+    margin: 0;
+    grid-row: 2/-1;
+    box-shadow: 1px 2px 18px 0px rgba(0,0,0,0.3);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+}
+.trendInd{
+    display: grid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 8px;
+}
+.trendInd>.pfp{
+    grid-row: 1/-1;
+    grid-column: 1/2;
+}
+.trendIndName{
+    font-weight: 800;
+}
+.trendIndDesc{
+    opacity: 0.8;
+}
+.trendInd>p{
+    height: 1em;
+}
+.trendIndName, .trendIndDesc{
+    font-size: 18px;
+}
+#trendLabel{
+    grid-row: 1/2;
+    margin: 0;
+    margin-top: 12px;
+}
+.trendIndName, .trendIndDesc{
+    margin: 0;
 }
